@@ -15,7 +15,7 @@
 		<div class="mt-1">
 			<label>Todo登録内容</label>
 		</div>
-		<form action="/add" method="post">
+		<form action="/add" method="post" onsubmit="return onSubmit()">
 			<div>
 				<input class="form-control" type="text" name="name" maxlength="60"
 					placeholder="タスクを入れてね" required />
@@ -31,6 +31,11 @@
 		</form>
 	</div>
 </body>
+<script>
+	function onSubmit() {
+		return window.confirm("登録してもよろしいですか？");
+	}
+</script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 	crossorigin="anonymous"></script>
