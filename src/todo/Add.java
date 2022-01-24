@@ -14,7 +14,8 @@ public class Add extends HttpServlet {
 		boolean result = list.addDBData(name);
 		if (result) {
 			response.sendRedirect("list.jsp");
+		} else {
+			response.sendRedirect("error.jsp");
 		}
-		response.sendRedirect("error.jsp");
 	}
 }

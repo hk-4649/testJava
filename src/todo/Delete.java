@@ -13,7 +13,8 @@ public class Delete extends HttpServlet {
 		boolean result = list.deleteDBData(id);
 		if (result) {
 			response.sendRedirect("list.jsp");
+		} else {
+			response.sendRedirect("error.jsp");
 		}
-		response.sendRedirect("error.jsp");
 	}
 }
