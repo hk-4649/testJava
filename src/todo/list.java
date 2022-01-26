@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 
 public class list extends HttpServlet {
 
-	static final boolean useConnectionPool = false;
+	static final boolean useConnectionPool = true;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
 		// 常にPOSTへ渡します。

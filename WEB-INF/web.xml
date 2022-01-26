@@ -4,24 +4,8 @@
     <servlet-name>list</servlet-name>
     <servlet-class>todo.list</servlet-class>
   </servlet>
-  <servlet>
-    <servlet-name>delete</servlet-name>
-    <servlet-class>todo.Delete</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>add</servlet-name>
-    <servlet-class>todo.Add</servlet-class>
-  </servlet>
   <servlet-mapping>
     <servlet-name>list</servlet-name>
     <url-pattern>/list</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>delete</servlet-name>
-    <url-pattern>/delete</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>add</servlet-name>
-    <url-pattern>/add</url-pattern>
   </servlet-mapping>
 </web-app>

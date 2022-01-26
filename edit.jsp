@@ -1,21 +1,30 @@
-<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
-<title>入力画面</title>
+<title>編集画面</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
   crossorigin="anonymous" />
 </head>
 <body>
+<%
+request.setCharacterEncoding("UTF-8");
+int id = Integer.valueOf(request.getParameter("id")).intValue();
+String name = request.getParameter("name");
+
+%>
   <div class="container">
     <div class="row">
-      <h3>Todo入力画面</h3>
+      <h3>Todo編集画面</h3>
     </div>
     <div class="mt-1">
-      <label>Todo登録内容</label>
+      <label>Todo編集内容</label>
     </div>
-    <form action="/add" method="post" onsubmit="return onSubmit()">
+    <form action="/edit" method="post" onsubmit="return onSubmit()">
       <div>
-        <input class="form-control" type="text" name="name" maxlength="60" placeholder="タスクを入れてね" required />
+        <input type="hidden" name="id" value="<%=id%>">
+        <input class="form-control" type="text" name="name" maxlength="60" value="<%=name%>" required />
       </div>
       <div class="text-right mt-3">
         <span class="mx-2"> <a class="btn btn-outline-secondary" href="/" role="button" style="width: 120px"> キャンセル </a>
