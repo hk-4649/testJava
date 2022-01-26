@@ -11,8 +11,8 @@ public class Add extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		request.setCharacterEncoding("UTF-8");
 		String name = request.getParameter("name");
-		TodoModel list = new TodoModel();
-		boolean result = list.addDBData(name);
+		TodoModel model = new TodoModel();
+		boolean result = model.insertTodoListItem(name);
 		if (result) {
 			response.sendRedirect("/");
 		} else {

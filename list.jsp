@@ -24,7 +24,7 @@
       <tbody>
         <%
         TodoModel model = new TodoModel();
-        List<TodoObject> list = model.getDbData();
+        List<TodoObject> list = model.getTodoList();
         for (TodoObject obj : list) {
         %>
         <tr>

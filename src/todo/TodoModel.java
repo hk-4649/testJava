@@ -16,8 +16,11 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 public class TodoModel implements Serializable {
-
-	public List<TodoObject> getDbData() {
+	/**
+	 * Todoリストを取得する
+	 * @return TodoリストのObject配列
+	 */
+	public List<TodoObject> getTodoList() {
 		List<TodoObject> list = new ArrayList<>();
 		Connection con = null;
 		Statement stmt = null;
@@ -64,7 +67,12 @@ public class TodoModel implements Serializable {
 		return list;
 	}
 
-	public boolean addDBData(String name) {
+	/**
+	 * Todoリストにアイテムを追加する
+	 * @param name Todoリストに追加するアイテムの名前
+	 * @return 追加成功したらtrue,失敗したらfalseを返す
+	 */
+	public boolean insertTodoListItem(String name) {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -109,7 +117,13 @@ public class TodoModel implements Serializable {
 		return true;
 	}
 
-	public boolean updateDBData(int id, String name) {
+	/**
+	 * Todoリストのアイテムを更新する
+	 * @param id 更新するアイテムのID
+	 * @param name 更新するアイテムの名前
+	 * @return 更新成功したらtrue,失敗したらfalseを返す
+	 */
+	public boolean updateTodoListItem(int id, String name) {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -155,7 +169,12 @@ public class TodoModel implements Serializable {
 		return true;
 	}
 
-	public boolean deleteDBData(int id) {
+	/**
+	 * Todoリストからアイテムを削除する
+	 * @param id 削除するアイテムのID
+	 * @return 削除成功したらtrue,失敗したらfalseを返す
+	 */
+	public boolean deleteTodoListItem(int id) {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;

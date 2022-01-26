@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 public class Delete extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
-		TodoModel list = new TodoModel();
-		boolean result = list.deleteDBData(id);
+		TodoModel model = new TodoModel();
+		boolean result = model.deleteTodoListItem(id);
 		if (result) {
 			response.sendRedirect("/");
 		} else {

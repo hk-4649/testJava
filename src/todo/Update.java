@@ -12,8 +12,8 @@ public class Update extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		int id = Integer.parseInt(request.getParameter("id"));
 		String name = request.getParameter("name");
-		TodoModel list = new TodoModel();
-		boolean result = list.updateDBData(id, name);
+		TodoModel model = new TodoModel();
+		boolean result = model.updateTodoListItem(id, name);
 		if (result) {
 			response.sendRedirect("/");
 		} else {
