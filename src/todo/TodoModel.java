@@ -15,7 +15,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-public class ModelList implements Serializable {
+public class TodoModel implements Serializable {
 
 	public List<TodoObject> getDbData() {
 		List<TodoObject> list = new ArrayList<>();
@@ -63,6 +63,7 @@ public class ModelList implements Serializable {
 		}
 		return list;
 	}
+
 	public boolean addDBData(String name) {
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -75,7 +76,6 @@ public class ModelList implements Serializable {
 			if (num <= 0) {
 				return false;
 			}
-
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -108,6 +108,7 @@ public class ModelList implements Serializable {
 		}
 		return true;
 	}
+
 	public boolean updateDBData(int id, String name) {
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -122,7 +123,6 @@ public class ModelList implements Serializable {
 				return false;
 			}
 
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -154,6 +154,7 @@ public class ModelList implements Serializable {
 		}
 		return true;
 	}
+
 	public boolean deleteDBData(int id) {
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -167,7 +168,6 @@ public class ModelList implements Serializable {
 				return false;
 			}
 
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -199,6 +199,7 @@ public class ModelList implements Serializable {
 		}
 		return true;
 	}
+
 	/**
 	 * DBとの接続を取得します。
 	 * 

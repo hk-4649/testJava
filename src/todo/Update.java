@@ -12,10 +12,10 @@ public class Update extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		int id = Integer.parseInt(request.getParameter("id"));
 		String name = request.getParameter("name");
-		ModelList list = new ModelList();
+		TodoModel list = new TodoModel();
 		boolean result = list.updateDBData(id, name);
 		if (result) {
-			response.sendRedirect("list.jsp");
+			response.sendRedirect("index.jsp");
 		} else {
 			response.sendRedirect("error.jsp");
 		}

@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
-<%@ taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.List"%>
-<%@ page import="todo.ModelList"%>
+<%@ page import="todo.TodoModel"%>
 <%@ page import="todo.TodoObject"%>
 <html>
 <head>
@@ -23,15 +23,15 @@
       </thead>
       <tbody>
         <%
-        ModelList model = new ModelList();
+        TodoModel model = new TodoModel();
         List<TodoObject> list = model.getDbData();
         for (TodoObject obj : list) {
         %>
         <tr>
-          <td class="align-middle"><c:out value="<%=obj.getName() %>" /></td>
+          <td class="align-middle"><c:out value="<%=obj.getName()%>" /></td>
           <td>
             <form class="center-block" action="/edit.jsp" method="post" style="margin-bottom: 0px; display: flex; justify-content: center; align-items: center;">
-              <input type="hidden" name="id" value="<%=obj.getId()%>" /> <input type="hidden" name="name" value="<c:out value="<%=obj.getName() %>" />" />
+              <input type="hidden" name="id" value="<%=obj.getId()%>" /> <input type="hidden" name="name" value="<c:out value="<%=obj.getName()%>" />" />
               <button class="btn btn-info" type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
                 <path

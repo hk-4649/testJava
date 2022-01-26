@@ -11,10 +11,10 @@ public class Add extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		request.setCharacterEncoding("UTF-8");
 		String name = request.getParameter("name");
-		ModelList list = new ModelList();
+		TodoModel list = new TodoModel();
 		boolean result = list.addDBData(name);
 		if (result) {
-			response.sendRedirect("list.jsp");
+			response.sendRedirect("index.jsp");
 		} else {
 			response.sendRedirect("error.jsp");
 		}
