@@ -13,7 +13,7 @@
     <div class="mt-1">
       <label>Todo登録内容</label>
     </div>
-    <form action="/add" method="post" onsubmit="return onSubmit()">
+    <form action="/add" method="post" onsubmit="return onRegister()">
       <div>
         <input class="form-control" type="text" name="name" maxlength="60" placeholder="タスクを入れてね" required />
       </div>
@@ -25,11 +25,7 @@
     </form>
   </div>
 </body>
-<script>
-	function onSubmit() {
-		return window.confirm("登録してもよろしいですか？");
-	}
-</script>
+<script src="js/todo.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
