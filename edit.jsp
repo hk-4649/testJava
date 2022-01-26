@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +25,7 @@ String name = request.getParameter("name");
     <form action="/edit" method="post" onsubmit="return onSubmit()">
       <div>
         <input type="hidden" name="id" value="<%=id%>">
-        <input class="form-control" type="text" name="name" maxlength="60" value="<%=name%>" required />
+        <input class="form-control" type="text" name="name" maxlength="60" value="<c:out value="<%=name %>" />" required />
       </div>
       <div class="text-right mt-3">
         <span class="mx-2"> <a class="btn btn-outline-secondary" href="/" role="button" style="width: 120px"> キャンセル </a>
