@@ -13,7 +13,7 @@ public class Delete extends HttpServlet {
 		TodoModel list = new TodoModel();
 		boolean result = list.deleteDBData(id);
 		if (result) {
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("/");
 		} else {
 			response.sendRedirect("error.jsp");
 		}

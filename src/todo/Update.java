@@ -15,7 +15,7 @@ public class Update extends HttpServlet {
 		TodoModel list = new TodoModel();
 		boolean result = list.updateDBData(id, name);
 		if (result) {
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("/");
 		} else {
 			response.sendRedirect("error.jsp");
 		}

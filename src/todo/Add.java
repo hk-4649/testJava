@@ -14,7 +14,7 @@ public class Add extends HttpServlet {
 		TodoModel list = new TodoModel();
 		boolean result = list.addDBData(name);
 		if (result) {
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("/");
 		} else {
 			response.sendRedirect("error.jsp");
 		}
