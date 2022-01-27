@@ -1,4 +1,4 @@
-package todo;
+package todo.model;
 
 import java.io.Serializable;
 import java.sql.Connection;

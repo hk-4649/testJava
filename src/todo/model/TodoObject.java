@@ -1,4 +1,4 @@
-package todo;
+package todo.model;
 
 public class TodoObject {
 	private int todoId;
