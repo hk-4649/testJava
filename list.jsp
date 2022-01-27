@@ -8,7 +8,6 @@
 <title>Todoリスト</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
   crossorigin="anonymous">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"">
 </head>
 <body>
   <div class="container">
@@ -22,40 +21,33 @@
         </tr>
       </thead>
       <tbody>
-        <%
-        TodoModel model = new TodoModel();
-        List<TodoObject> list = model.getTodoList();
-        for (TodoObject obj : list) {
-        %>
-        <tr>
-          <td class="align-middle"><c:out value="<%=obj.getName()%>" /></td>
-          <td>
-            <form class="center-block" action="/edit.jsp" method="post" style="margin-bottom: 0px; display: flex; justify-content: center; align-items: center;">
-              <input type="hidden" name="id" value="<%=obj.getId()%>" />
-              <input type="hidden" name="name" value="<c:out value="<%=obj.getName()%>" />" />
-              <button class="btn btn-info" type="submit">
-                <svg width="16" height="16">
+        <c:forEach var="obj" items="${list}">
+          <tr>
+            <td class="align-middle"><c:out value="${obj.name}" /></td>
+            <td>
+              <form class="center-block" action="/edit.jsp" method="post" style="margin-bottom: 0px; display: flex; justify-content: center; align-items: center;">
+                <input type="hidden" name="id" value="${obj.id}" /> <input type="hidden" name="name" value="<c:out value="${obj.name}" />" />
+                <button class="btn btn-info" type="submit">
+                  <svg width="16" height="16">
                   <use href="/img/edit.svg#edit"></use>
                 </svg>
-                編集
-              </button>
-            </form>
-          </td>
-          <td>
-            <form class="center-block" action="/delete" method="post" onsubmit="return onDelete()" style="margin-bottom: 0px; display: flex; justify-content: center; align-items: center;">
-              <input type="hidden" name="id" value="<%=obj.getId()%>" />
-              <button class="btn btn-outline-secondary" type="submit">
-                <svg width="16" height="16">
+                  編集
+                </button>
+              </form>
+            </td>
+            <td>
+              <form class="center-block" action="/delete" method="post" onsubmit="return onDelete()" style="margin-bottom: 0px; display: flex; justify-content: center; align-items: center;">
+                <input type="hidden" name="id" value="${obj.id}" />
+                <button class="btn btn-outline-secondary" type="submit">
+                  <svg width="16" height="16">
                   <use href="/img/delete.svg#delete"></use>
                 </svg>
-                削除
-              </button>
-            </form>
-          </td>
-        </tr>
-        <%
-        }
-        %>
+                  削除
+                </button>
+              </form>
+            </td>
+          </tr>
+        </c:forEach>
       </tbody>
     </table>
     <div class="text-right">

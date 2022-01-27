@@ -7,7 +7,7 @@
 </head>
 <body>
 <%
-  RequestDispatcher dispatcher =  request.getRequestDispatcher("/list.jsp");
+  RequestDispatcher dispatcher =  request.getRequestDispatcher("/get_list");
   dispatcher.forward(request, response);
 %>
 </body>
